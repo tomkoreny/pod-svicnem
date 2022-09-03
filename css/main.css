@@ -280,7 +280,7 @@ h2 {
 
 
 .landing {
-  background-image: url("/img/zena/zena.png");
+  background-image: url("img/zena/zena.png");
   background-repeat: no-repeat;
   background-size: 100vw;
   height: 100vh;
@@ -435,7 +435,7 @@ div.stories p.signature {
 }
 
 .story-background {
-  background-image: url("/img/zena/zena.png");
+  background-image: url("img/zena/zena.png");
   background-repeat: no-repeat;
   background-size: 3840px;
   background-position: right 250px;
