@@ -272,19 +272,43 @@ body {
   font-weight: normal;
   letter-spacing: 0;
   color: var(--main-red-color);
+  cursor: url("../img/cursor.svg"), default;
 }
+
+img.top-logo {
+  z-index: 1;
+}
+
+div.shadow {
+  position: absolute;
+  clip-path: polygon(345px 0px, 375px 0px, 50% 100%, -10% 100%);
+  top: 84px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent linear-gradient(176deg, #E5E5E5 0%, #E0E0E05D 77%, #DDDDDD00 100%) 0 0 no-repeat padding-box;
+  mix-blend-mode: multiply;
+  opacity: 1;
+}
+
 
 h2 {
   font-weight: normal;
+  width: 90vw;
 }
 
+body, html{
+  margin:0;
+  padding:0;
+  min-width: fit-content;
+}
 
 .landing {
   background-image: url("../img/zena/zena.png");
   background-repeat: no-repeat;
-  background-size: 100vw;
+  background-size: 100%;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: visible;
   padding-bottom: 243px;
   margin-bottom: -243px;
@@ -298,6 +322,7 @@ h1 {
   line-height: 120px;
   margin-top: 277px;
   margin-bottom: 0;
+  width: 90vw;
 }
 
 h2.main-subtitle {
@@ -322,6 +347,12 @@ nav a.active {
   border: 2px solid var(--main-red-color);
 }
 
+nav a.active:hover {
+  background: var(--main-red-color);
+  color: white;
+  transition: all ease-in-out 100ms;
+}
+
 nav a:first-of-type {
   margin-left: 50px;
 }
@@ -329,6 +360,11 @@ nav a:first-of-type {
 nav a {
   padding: 12px;
   margin-left: 15px;
+}
+
+nav a:hover {
+  border-bottom: 2px solid var(--main-red-color);
+  transition: all ease-in-out 100ms;
 }
 
 .quote {
@@ -341,9 +377,17 @@ nav a {
 
 .scroll-arrow {
   position: absolute;
+  background-image: url("../img/arrow.svg");
+  width: 59px;
+  height: 59px;
   bottom: 20px;
   left: calc(50vw - 30px);
   animation: wiggle 0.3s ease-in-out 2s 4 alternate;
+}
+
+.scroll-arrow:hover {
+  background-image: url("../img/arrow_hover.svg");
+  transition: all ease-in-out 200ms;
 }
 
 @keyframes wiggle {
@@ -351,7 +395,7 @@ nav a {
     transform: translate(0px, 0px);
   }
   to {
-    transform: translate(0px, 20px);
+    transform: translate(0px, 10px);
   }
 }
 
@@ -379,7 +423,12 @@ div.goals {
 }
 
 div.goal {
+  flex: 1;
   border: 2px solid var(--main-red-color);
+}
+
+div.goal:not(:first-child) {
+  border-left: 0;
 }
 
 h3 {
@@ -437,13 +486,13 @@ div.stories p.signature {
 .story-background {
   background-image: url("../img/zena/zena.png");
   background-repeat: no-repeat;
-  background-size: 3840px;
+  background-size: 200%;
   background-position: right 250px;
   height: 100vh;
   width: 100vw;
   overflow: visible;
-  margin-bottom: -600px;
-  padding-bottom: 200px;
+  margin-bottom: calc(-5vw * 3);;
+  padding-bottom: 4%;
 }
 
 div.timeline {
@@ -514,4 +563,47 @@ div.footer div.socials p {
   font-size: 27px;
   text-align: center;
   margin: 5px;
+}
+
+@media only screen and (max-width: 1900px) {
+  .quote {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  nav a {
+    display: none;
+  }
+
+  div.shadow {
+    clip-path: polygon(345px 0px, 375px 0px, 80% 100%, -10% 100%);
+  }
+
+  div.goals {
+    flex-direction: column;
+    width: 90vw;
+    margin-left: 1rem;
+  }
+
+  div.goal:not(:first-child) {
+    border: 2px solid var(--main-red-color);
+    border-top: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h2.main-subtitle {
+    text-align: left;
+    padding-right: 5rem;
+    padding-left: 5rem;
+
+    font-size: 20px;
+    line-height: 80px;
+    margin-bottom: 0;
+  }
+
+  div.shadow {
+    clip-path: polygon(345px 0px, 375px 0px, 140% 100%, -10% 100%);
+  }
 }
