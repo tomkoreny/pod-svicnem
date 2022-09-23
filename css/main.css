@@ -369,6 +369,8 @@ nav a:first-of-type {
 }
 
 nav a {
+  color: var(--main-red-color);
+  text-decoration: none;
   padding: 12px;
   margin-left: 15px;
 }
@@ -386,6 +388,14 @@ nav a:hover {
   right: -14vw;
 }
 
+h4 {
+  font-size: 1.3rem;
+}
+
+.help-box div {
+  margin-top: .5rem;
+}
+
 .scroll-arrow {
   position: absolute;
   background-image: url("../img/arrow.svg");
@@ -394,6 +404,20 @@ nav a:hover {
   bottom: 20px;
   left: calc(50vw - 30px);
   animation: wiggle 0.3s ease-in-out 2s 4 alternate;
+}
+
+.next-arrow {
+  rotate: 90deg;
+}
+
+.previous-arrow {
+  rotate: -90deg;
+}
+
+div.stories-header {
+  display: flex;
+  align-items: baseline;
+  padding-inline: 2rem;
 }
 
 .scroll-arrow:hover {
@@ -427,6 +451,10 @@ h2.title.about-us {
   margin-top: 10rem;
   padding-bottom: 0;
   margin-bottom: 0;
+}
+
+.about-us a {
+  color: var(--main-red-color);
 }
 
 div.goals {
@@ -473,12 +501,12 @@ nav.help-box {
 }
 
 div.help-box {
-  width: 500px;
   margin: auto;
   text-align: center;
+}
 
-  height: 500px;
-  padding-top: 200px;
+div.help-box a {
+  color: var(--main-red-color);
 }
 
 div.stories {
@@ -498,6 +526,13 @@ div.stories p.signature {
   text-align: right;
 }
 
+div.story {
+  display: none;
+}
+
+div.story.active {
+  display: block;
+}
 .story-background {
   background-image: url("../img/zena/zena.png");
   background-repeat: no-repeat;
@@ -576,13 +611,32 @@ div.footer div.socials p {
 }
 
 .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid var(--main-red-color);
   width: 27px;
   height: 27px;
   line-height: 27px;
   font-size: 27px;
   text-align: center;
-  margin: 5px;
+}
+
+.icon:not(:first-of-type) {
+  border-left: 0;
+}
+
+.icon:hover {
+  background-color: var(--main-red-color);
+  color: white;
+}
+
+.icon img {
+  filter: invert(21%) sepia(60%) saturate(4427%) hue-rotate(355deg) brightness(87%) contrast(96%);
+}
+
+.icon:hover img {
+  filter: invert(100%);
 }
 
 @media only screen and (max-width: 1900px) {
