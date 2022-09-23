@@ -265,6 +265,8 @@ textarea {
 
 /*HERE ARE MY STYLES*/
 
+* { margin: 0; padding: 0; }
+
 body {
   --main-red-color: #D92612;
 
@@ -276,13 +278,22 @@ body {
 }
 
 img.top-logo {
-  z-index: 1;
+  /*z-index: 1;*/
+  position: absolute;
+}
+
+.logo-wrapper {
+  top: 27px;
+  left: 75px;
+  position: absolute;
+  height: calc(100% - 27px);
+  width: calc(100% - 75px);
 }
 
 div.shadow {
   position: absolute;
-  clip-path: polygon(345px 0px, 375px 0px, 50% 100%, -10% 100%);
-  top: 84px;
+  clip-path: polygon(270px 0px, 300px 0px, 50% 100%, -10% 100%);
+  top: 57px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -294,7 +305,7 @@ div.shadow {
 
 h2 {
   font-weight: normal;
-  width: 90vw;
+  /*width: 90vw;*/
 }
 
 body, html{
@@ -322,7 +333,7 @@ h1 {
   line-height: 120px;
   margin-top: 277px;
   margin-bottom: 0;
-  width: 90vw;
+  /*width: 90vw;*/
 }
 
 h2.main-subtitle {
@@ -339,8 +350,8 @@ nav {
   align-items: flex-end;
 
   font-size: 20px;
-  padding-top: 27px;
-  padding-left: 75px;
+  padding-top: 45px;
+  padding-left: 375px;
 }
 
 nav a.active {
@@ -400,6 +411,7 @@ nav a:hover {
 }
 
 h2.title {
+  width: 100%;
   font-size: 60px;
   line-height: 120px;
   margin-bottom: 73px;
@@ -412,19 +424,22 @@ h2.title.title-long {
 }
 
 h2.title.about-us {
+  margin-top: 10rem;
   padding-bottom: 0;
   margin-bottom: 0;
 }
 
 div.goals {
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  width: 100%;
+  /*width: 90%;*/
 }
 
 div.goal {
   flex: 1;
   border: 2px solid var(--main-red-color);
+  background: white;
 }
 
 div.goal:not(:first-child) {
@@ -443,8 +458,8 @@ div.goal p {
 
   margin-block-start: 0;
   margin-block-end: 0;
-  padding-left: 128px;
-  padding-right: 128px;
+  padding-left: 110px;
+  padding-right: 110px;
   padding-block-end: 78px;
 }
 
@@ -470,8 +485,8 @@ div.stories {
   border: 2px solid var(--main-red-color);
   background-color: white;
   width: 60vw;
-  margin: auto;
   padding-bottom: 60px;
+  margin: 10rem auto auto;
 }
 
 div.stories p {
@@ -530,7 +545,12 @@ p.about-us {
   line-height: 25px;
 
   margin-inline: auto;
-  width: 1050px;
+  max-width: 1050px;
+  padding-inline: 2rem;
+}
+
+.about-us {
+  background: white;
 }
 
 
@@ -540,7 +560,6 @@ div.footer {
   margin-top: 200px;
   padding-top: 20px;
   border-top: 2px solid var(--main-red-color);
-  margin-bottom: 150px;
   padding-inline: 50px;
 }
 
@@ -572,23 +591,37 @@ div.footer div.socials p {
 }
 
 @media only screen and (max-width: 1400px) {
+  h1 {
+    margin-top: 200px;
+    padding-right: 3rem;
+  }
+
   nav a {
     display: none;
   }
 
   div.shadow {
-    clip-path: polygon(345px 0px, 375px 0px, 80% 100%, -10% 100%);
+    clip-path: polygon(270px 0px, 300px 0px, 80% 100%, -10% 100%);
   }
 
   div.goals {
     flex-direction: column;
     width: 90vw;
-    margin-left: 1rem;
+    margin: auto;
+    /*margin-left: 1rem;*/
+  }
+
+  div.stories {
+    width: 90vw;
   }
 
   div.goal:not(:first-child) {
     border: 2px solid var(--main-red-color);
     border-top: 0;
+  }
+
+  .landing {
+    background-size: 150%;
   }
 }
 
@@ -604,6 +637,22 @@ div.footer div.socials p {
   }
 
   div.shadow {
-    clip-path: polygon(345px 0px, 375px 0px, 140% 100%, -10% 100%);
+    clip-path: polygon(270px 0px, 300px 0px, 140% 100%, -10% 100%);
+  }
+
+  .landing {
+    background-size: 200%;
+  }
+
+  h1 {
+    margin-top: 200px;
+  }
+
+  div.footer {
+    flex-direction: column;
+  }
+
+  h2.title.about-us {
+    margin-top: 13rem;
   }
 }
