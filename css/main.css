@@ -270,7 +270,7 @@ textarea {
 body {
   --main-red-color: #D92612;
 
-  font-family: TT Hoves Pro Trial, sans-serif;
+  font-family: TTHovesProMedium, sans-serif;
   font-weight: normal;
   letter-spacing: 0;
   color: var(--main-red-color);
@@ -346,6 +346,8 @@ h2.main-subtitle {
 }
 
 nav {
+  z-index: 1;
+  position: relative;
   display: flex;
   align-items: flex-end;
 
@@ -397,12 +399,15 @@ h4 {
 }
 
 .scroll-arrow {
-  position: absolute;
+  display: block;
+  position: sticky;
   background-image: url("../img/arrow.svg");
-  width: 59px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 30vh;
   height: 59px;
   bottom: 20px;
-  left: calc(50vw - 30px);
+  width: 100%;
   animation: wiggle 0.3s ease-in-out 2s 4 alternate;
 }
 
@@ -538,10 +543,10 @@ div.story.active {
   background-repeat: no-repeat;
   background-size: 200%;
   background-position: right 250px;
-  height: 100vh;
+  height: 60vh;
   width: 100vw;
   overflow: visible;
-  margin-bottom: calc(-22vh * 5);;
+  margin-bottom: calc(-14vh * 5);;
   padding-bottom: 4%;
 }
 
@@ -632,6 +637,7 @@ div.footer div.socials p {
 }
 
 .icon img {
+  width: 90%;
   filter: invert(21%) sepia(60%) saturate(4427%) hue-rotate(355deg) brightness(87%) contrast(96%);
 }
 
@@ -688,7 +694,7 @@ div.footer div.socials p {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   h2.main-subtitle {
     text-align: left;
     padding-right: 5rem;
@@ -717,5 +723,16 @@ div.footer div.socials p {
 
   h2.title.about-us {
     margin-top: 13rem;
+  }
+
+  div.stories-header {
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 1rem;
+    padding-block: .5rem;
+  }
+
+  div.stories-header h2 {
+    margin: 0;
   }
 }
