@@ -321,8 +321,8 @@ body, html{
   height: 100vh;
   width: 100%;
   overflow: visible;
-  padding-bottom: 243px;
-  margin-bottom: -243px;
+  padding-bottom: 223px;
+  margin-bottom: -223px;
 }
 
 h1 {
@@ -442,9 +442,11 @@ div.stories-header {
 h2.title {
   width: 100%;
   font-size: 60px;
-  line-height: 120px;
+  line-height: 90px;
   margin-bottom: 73px;
   text-align: center;
+  z-index: 1;
+  position: relative;
 }
 
 h2.title.title-long {
@@ -467,6 +469,8 @@ div.goals {
   display: flex;
   flex-direction: row;
   /*width: 90%;*/
+  z-index: 1;
+  position: relative;
 }
 
 div.goal {
@@ -508,6 +512,15 @@ nav.help-box {
 div.help-box {
   margin: auto;
   text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+div.help-box div {
+  margin-top: 3rem;
+  width: 200px;
 }
 
 div.help-box a {
@@ -721,6 +734,10 @@ div.footer div.socials p {
     flex-direction: column;
   }
 
+  div.socials {
+    justify-content: flex-end;
+  }
+
   h2.title.about-us {
     margin-top: 13rem;
   }
@@ -730,6 +747,10 @@ div.footer div.socials p {
     align-items: center;
     padding-inline: 1rem;
     padding-block: .5rem;
+  }
+
+  .next-arrow {
+    display: none;
   }
 
   div.stories-header h2 {

@@ -21,3 +21,12 @@ function previousStory() {
   }
   arr[activeStoryIndex - 1].classList.add('active');
 }
+
+addEventListener('scroll', () => {
+  removeScrollArrow();
+}, {once: true});
+
+function removeScrollArrow() {
+  const arrow = document.querySelector('a.scroll-arrow');
+  arrow.remove();
+}
