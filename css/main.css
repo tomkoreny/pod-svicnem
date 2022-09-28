@@ -411,12 +411,26 @@ h4 {
   animation: wiggle 0.3s ease-in-out 2s 4 alternate;
 }
 
+a:has(> .next-arrow), a:has(> .previous-arrow) {
+  cursor: pointer;
+}
+
 .next-arrow {
+  margin-top: 2rem;
   rotate: 90deg;
+  background-image: url("../img/arrow.svg");
+  background-repeat: no-repeat;
+  height: 59px;
+  width: 59px;
 }
 
 .previous-arrow {
+  margin-top: 2rem;
   rotate: -90deg;
+  background-image: url("../img/arrow.svg");
+  background-repeat: no-repeat;
+  height: 59px;
+  width: 59px;
 }
 
 div.stories-header {
@@ -425,7 +439,7 @@ div.stories-header {
   padding-inline: 2rem;
 }
 
-.scroll-arrow:hover {
+.scroll-arrow:hover, a:hover > .next-arrow, a:hover > .previous-arrow {
   background-image: url("../img/arrow_hover.svg");
   transition: all ease-in-out 200ms;
 }
@@ -447,6 +461,10 @@ h2.title {
   text-align: center;
   z-index: 1;
   position: relative;
+}
+
+h2.title.margin {
+  margin-top: 180px;
 }
 
 h2.title.title-long {
@@ -532,7 +550,7 @@ div.stories {
   background-color: white;
   width: 60vw;
   padding-bottom: 60px;
-  margin: 10rem auto auto;
+  margin: 180px auto auto;
 }
 
 div.stories p {
@@ -751,6 +769,10 @@ div.footer div.socials p {
 
   .next-arrow {
     display: none;
+  }
+
+  .previous-arrow {
+    margin-top: 0;
   }
 
   div.stories-header h2 {
