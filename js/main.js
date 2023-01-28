@@ -22,6 +22,30 @@ function previousStory() {
   arr[activeStoryIndex - 1].classList.add('active');
 }
 
+function nextTimeline() {
+  const timelines = document.querySelector('ul.timeline').children;
+  const arr = Array.from(timelines).filter(el => el.classList.contains('li'));
+  const activeStoryIndex = arr.findIndex(el => el.classList.contains('active'))
+  arr[activeStoryIndex].classList.remove('active');
+  if (activeStoryIndex + 1 === arr.length) {
+    arr[0].classList.add('active');
+    return
+  }
+  arr[activeStoryIndex + 1].classList.add('active');
+}
+
+function previousTimeline() {
+  const timelines = document.querySelector('ul.timeline').children;
+  const arr = Array.from(timelines).filter(el => el.classList.contains('li'));
+  const activeStoryIndex = arr.findIndex(el => el.classList.contains('active'))
+  arr[activeStoryIndex].classList.remove('active');
+  if (activeStoryIndex + 1 === arr.length) {
+    arr[0].classList.add('active');
+    return
+  }
+  arr[activeStoryIndex + 1].classList.add('active');
+}
+
 addEventListener('scroll', () => {
   removeScrollArrow();
 }, {once: true});
