@@ -473,7 +473,6 @@ h2.title.title-long {
 }
 
 h2.title.about-us {
-  margin-top: 10rem;
   padding-bottom: 0;
   margin-bottom: 0;
 }
@@ -583,10 +582,14 @@ div.story.active {
 
 div.timeline {
   width: 500px;
-  margin: auto;
+  margin: 50px auto auto;
   text-align: center;
 
   height: 360px;
+}
+
+div.timeline > a > div {
+  margin-top: calc(1rem - 2px);
 }
 
 div.letter {
@@ -787,6 +790,16 @@ div.footer div.socials p {
   justify-content: center;
 }
 
+.timeline a {
+  text-decoration: none;
+  color: var(--main-red-color);
+  cursor: pointer;
+}
+
+.timeline a:hover {
+  text-decoration: underline;
+}
+
 .li {
   transition: all 200ms ease-in;
 }
@@ -859,4 +872,14 @@ audio {
   width: 80%;
   margin-left: 10%;
   margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    display: none;
+  }
+
+  #timeline-header {
+    display: none;
+  }
 }
