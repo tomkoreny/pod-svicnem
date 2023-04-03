@@ -642,7 +642,7 @@ div.footer div.socials {
   display: flex;
   align-items: center;
   font-size: 20px;
-  line-height: 120px;
+  line-height: 80px;
 }
 
 div.footer div.socials p {
@@ -756,6 +756,11 @@ div.footer div.socials p {
   }
 
   div.socials {
+    justify-content: flex-end;
+  }
+  
+  div.podporujeme {
+    display: flex;
     justify-content: flex-end;
   }
 
@@ -882,4 +887,7 @@ audio {
   #timeline-header {
     display: none;
   }
+}
+.podporujeme a {
+  color: var(--main-red-color);
 }
