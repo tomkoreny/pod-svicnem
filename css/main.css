@@ -636,6 +636,7 @@ div.footer {
   padding-top: 20px;
   border-top: 2px solid var(--main-red-color);
   padding-inline: 50px;
+  padding-bottom: 30px;
 }
 
 div.footer div.socials {
