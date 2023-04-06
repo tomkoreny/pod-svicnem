@@ -636,7 +636,6 @@ div.footer {
   padding-top: 20px;
   border-top: 2px solid var(--main-red-color);
   padding-inline: 50px;
-  padding-bottom: 30px;
 }
 
 div.footer div.socials {
@@ -765,6 +764,12 @@ div.footer div.socials p {
     justify-content: flex-end;
   }
 
+  div.ipsos {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+  }
+
   h2.title.about-us {
     margin-top: 13rem;
   }
@@ -889,6 +894,13 @@ audio {
     display: none;
   }
 }
+.podporujeme {
+  padding-bottom: 10px;
+}
 .podporujeme a {
   color: var(--main-red-color);
+}
+
+.ipsosimg {
+  vertical-align:text-bottom;
 }
