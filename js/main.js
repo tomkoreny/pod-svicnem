@@ -22,39 +22,51 @@ function previousStory() {
   arr[activeStoryIndex - 1].classList.add('active');
 }
 
+const numberOfPoints = 5;
+const timelines = document.querySelector('ul.timeline').children;
+const arr = Array.from(timelines).filter(el => el.classList.contains('li'));
+arr.forEach(el => el.classList.add('hidden'));
+for (let i = 0; i < numberOfPoints; i++) {
+  document.querySelector(`ul.timeline > li:nth-child(${i + 1})`).classList.remove('hidden');
+}
+
+
+
 function nextTimeline() {
-  const timelines = document.querySelector('ul.timeline').children;
-  const arr = Array.from(timelines).filter(el => el.classList.contains('li'));
   const activeStoryIndex = arr.findIndex(el => !el.classList.contains('hidden'))
-  arr[activeStoryIndex].classList.add('hidden');
-  arr[activeStoryIndex + 1].classList.add('hidden');
-  arr[activeStoryIndex + 2].classList.add('hidden');
-  arr[activeStoryIndex + 3].classList.add('hidden');
-  arr[activeStoryIndex + 4].classList.add('hidden');
-  arr[activeStoryIndex + 5].classList.remove('hidden');
-  arr[activeStoryIndex + 6].classList.remove('hidden');
-  arr[activeStoryIndex + 7].classList.remove('hidden');
-  arr[activeStoryIndex + 8].classList.remove('hidden');
-  arr[activeStoryIndex + 9].classList.remove('hidden');
-  document.querySelector('a#next-timeline').classList.add('hidden');
+
+  for (let i = 0; i < numberOfPoints; i++) {
+    arr[activeStoryIndex + i] && arr[activeStoryIndex + i].classList.add('hidden');
+  }
+
+  for (let i = 0; i < numberOfPoints; i++) {
+    arr[activeStoryIndex + numberOfPoints + i] && arr[activeStoryIndex + numberOfPoints + i].classList.remove('hidden');
+  }
+
+  if (activeStoryIndex + numberOfPoints * 2 >= arr.length) {
+    document.querySelector('a#next-timeline').classList.add('hidden');
+  }
+
   document.querySelector('a#previous-timeline').classList.remove('hidden');
 }
 
 function previousTimeline() {
-  const timelines = document.querySelector('ul.timeline').children;
-  const arr = Array.from(timelines).filter(el => el.classList.contains('li'));
   const activeStoryIndex = arr.findIndex(el => !el.classList.contains('hidden'))
-  arr[activeStoryIndex].classList.add('hidden');
-  arr[activeStoryIndex + 1].classList.add('hidden');
-  arr[activeStoryIndex + 2].classList.add('hidden');
-  arr[activeStoryIndex + 3].classList.add('hidden');
-  arr[activeStoryIndex + 4].classList.add('hidden');
-  arr[activeStoryIndex - 1].classList.remove('hidden');
-  arr[activeStoryIndex - 2].classList.remove('hidden');
-  arr[activeStoryIndex - 3].classList.remove('hidden');
-  arr[activeStoryIndex - 4].classList.remove('hidden');
-  arr[activeStoryIndex - 5].classList.remove('hidden');
-  document.querySelector('a#previous-timeline').classList.add('hidden');
+
+  for (let i = 0; i < numberOfPoints; i++) {
+    arr[activeStoryIndex + i] &&
+    arr[activeStoryIndex + i].classList.add('hidden');
+  }
+
+  for(let i = 0; i < numberOfPoints; i++) {
+    arr[activeStoryIndex - numberOfPoints + i] &&
+    arr[activeStoryIndex - numberOfPoints + i].classList.remove('hidden');
+  }
+
+  if (activeStoryIndex - numberOfPoints <= 0) {
+    document.querySelector('a#previous-timeline').classList.add('hidden');
+  }
+
   document.querySelector('a#next-timeline').classList.remove('hidden');
 }
 
