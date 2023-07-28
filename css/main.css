@@ -283,7 +283,7 @@ img.top-logo {
 }
 
 .logo-wrapper {
-  top: 27px;
+  top: 56px;
   left: 75px;
   position: absolute;
   height: calc(100% - 27px);
@@ -323,6 +323,7 @@ body, html{
   overflow: visible;
   padding-bottom: 223px;
   margin-bottom: -223px;
+  padding-top: 10px;
 }
 
 h1 {
@@ -903,4 +904,19 @@ audio {
 
 .ipsosimg {
   vertical-align:text-bottom;
+}
+
+.topbar {
+  text-align: center;
+  position: static;
+  top: 0px;
+  margin-inline: 15vw;
+  background-color: rgba(0, 0, 0, .15);
+  padding-block: 5px;
+  border-radius: 15px;
+}
+
+.topbar a {
+  color: var(--main-red-color);
+  text-decoration: none;
 }
