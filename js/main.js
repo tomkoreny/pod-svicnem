@@ -25,8 +25,9 @@ function previousStory() {
 const numberOfPoints = 5;
 const timelines = document.querySelector('ul.timeline').children;
 const arr = Array.from(timelines).filter(el => el.classList.contains('li'));
+const alength = arr.length
 arr.forEach(el => el.classList.add('hidden'));
-for (let i = 0; i < numberOfPoints; i++) {
+for (let i = alength - numberOfPoints; i < numberOfPoints + alength; i++) {
   document.querySelector(`ul.timeline > li:nth-child(${i + 1})`).classList.remove('hidden');
 }
 
